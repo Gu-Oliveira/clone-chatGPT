@@ -2,14 +2,15 @@
 
 import { Sidebar } from "@/components/Sidebar"
 import { useState } from "react"
+import { Header } from "@/components/Header"
+
 
 const Page = () => {
 
-  const [sidebarOpened, setSidebarOpened] = useState(true);
+  const [sidebarOpened, setSidebarOpened] = useState(false);
 
-  const closeSidebar = () => {
-    setSidebarOpened(false)
-  }
+  const openSidebar = () => setSidebarOpened(true);
+  const closeSidebar = () => setSidebarOpened(false);
 
   const handleClearConversations = () =>{
 
@@ -27,11 +28,19 @@ const Page = () => {
         onClear={handleClearConversations}
         onNewChat={handleNewChat}
       >
-
+        <div className="">
+          ...
+        </div>
       </Sidebar>
 
       <section className="flex flex-col w-full">
-        <button onClick={() => setSidebarOpened(true)}>Abrir Sidebar</button>
+        
+        <Header 
+          openSidebarClick={openSidebar}
+          title={`Título`}
+          newChatClick={handleNewChat}
+        />
+
       </section>
     </main>
   )
