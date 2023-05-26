@@ -16,6 +16,7 @@ module.exports = {
         'gpt-gray': '#343541',
         'gpt-lightgray': '#40414f',
         'sb-color': '#202123',
+        'chat-ai': '#444654'
       }
     },
   },
